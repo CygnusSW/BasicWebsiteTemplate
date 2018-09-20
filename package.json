@@ -6,8 +6,9 @@
   "scripts": {
     "webpack": "webpack",
     "test": "npm run-script webpack && mocha --recursive ./dist/test.bundle.js",
-    "serve": "concurrently \"npm run-script start\" \"browser-sync start --config bs-config.js\"",
 
+    "serve": "concurrently \"npm run-script webpack:watch\" \"browser-sync start --config bs-config.js\"",
+    "serveWithTests": "start npm run-script test:watch && browser-sync start --config bs-config.js",
 
     "webpack:watch": "webpack --watch",
     "test:watch": "concurrently \"npm run-script webpack:watch\" \"mocha --recursive ./dist/test.bundle.js --watch\""
@@ -32,7 +33,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "jasmine": "^3.2.0",
     "karma": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.3",
     "mocha": "^5.2.0",
@@ -42,7 +42,6 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-cli": "^3.1.0"
   }
 }
