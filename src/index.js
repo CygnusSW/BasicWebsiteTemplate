@@ -1,3 +1,8 @@
-import log from "./added_file";
+export function log(msg){
+    console.log(msg);
+}
 
-log("Import works");
+export function add(x1, x2)
+{
+    return x1 + x2;
+}

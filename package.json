@@ -1,16 +1,16 @@
 {
   "name": "basic-website-template",
   "version": "0.0.1",
-  "description": "Basic template for jade, scss, karma, mocha",
+  "description": "Basic template for pug, scss, karma, mocha",
   "main": "index.js",
   "scripts": {
-    "pug:watch": "pug src --out ./dist --watch",
-    "scss:watch": "sass --watch src/scss:dist/css",
-    "babel:watch": "babel src/js -d dist/js --ignore node_modules --watch",
-    "test:watch": "mocha ",
-    "webpack:watch": "webpack --watch",
+    "webpack": "webpack",
+    "test": "npm run-script webpack && mocha --recursive ./dist/test.bundle.js",
     "serve": "concurrently \"npm run-script start\" \"browser-sync start --config bs-config.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+
+    "webpack:watch": "webpack --watch",
+    "test:watch": "concurrently \"npm run-script webpack:watch\" \"mocha --recursive ./dist/test.bundle.js --watch\""
   },
   "keywords": [
     "website"
@@ -32,8 +32,10 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jasmine": "^3.2.0",
     "karma": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.3",
+    "mocha": "^5.2.0",
     "node-sass": "^4.9.3",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",

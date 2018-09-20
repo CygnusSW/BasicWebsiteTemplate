@@ -10,7 +10,7 @@ module.exports = {
       path.resolve(__dirname, "src/main.scss"),
      ],
      test: [
-      path.resolve(__dirname, "src/tests/index.spec.js")
+      path.resolve(__dirname, "src/tests/index.test.js")
      ]
     },
     output: {
